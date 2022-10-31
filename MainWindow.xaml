@@ -11,6 +11,7 @@
         <!--<local1:textPlaceHolderDemo/>-->
         <!--<local1:ControlDetailTemplateShow/>-->
         <!--<local1:DIYControlTemplateDemo/>-->
-        <local1:RichTextBoxDemo/>
+        <!--<local1:RichTextBoxDemo/>-->
+        <local1:DataTemplateItemsSourceDataBindingTest/>
     </Grid>
 </Window>

@@ -1,4 +1,12 @@
-﻿本仓库仅用作wpf的各种方面的测试，学习。
+﻿
+在Git命令窗口，执行解除SSL验证命令脚本完成设置操作。
+```c#
+
+git config --global http.sslVerify "false"
+
+```
+
+本仓库仅用作wpf的各种方面的测试，学习。
 
 This repository is only for the purpose of 
 small demos of test or study of WPF.
@@ -22,3 +30,4 @@ ControlTemplate是单纯用来改变控件外形的，与数据无关，比如
 Button.Template的值就是ControlTemplate类型，是构建可视化树的工具。
 
 * Margin控制的是控件与控件的距离，Padding控制的是内部文字与控件外边缘的距离。
+
