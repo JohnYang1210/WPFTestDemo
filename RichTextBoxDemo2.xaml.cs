@@ -21,6 +21,28 @@ namespace wpfTestStudio
         public RichTextBoxDemo2()
         {
             InitializeComponent();
+            Init();
+        }
+        /// <summary>
+        /// 动态创建流文档
+        /// </summary>
+        public void Init()
+        {
+            Run runFirst = new Run();
+            runFirst.Text = "Hello world of";
+            Bold bold = new Bold();
+            Run runBold = new Run() { Text = " dynamically generated" };
+            bold.Inlines.Add(runBold);
+
+            Run runLast = new Run();
+            runLast.Text = " Document";
+
+            Paragraph paragraph = new Paragraph();
+            paragraph.Inlines.Add(runFirst);
+            paragraph.Inlines.Add(bold);
+            paragraph.Inlines.Add(runLast);
+
+            flowDoc.Blocks.Add(paragraph);
         }
     }
 }
