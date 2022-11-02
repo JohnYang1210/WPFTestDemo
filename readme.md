@@ -28,6 +28,8 @@ DataTemplate是用以控制展现数据的方式，是与数据相关的，所�
 值，而DataTemplate中用binding来绑定从ItemSource传来的数据。
 ControlTemplate是单纯用来改变控件外形的，与数据无关，比如
 Button.Template的值就是ControlTemplate类型，是构建可视化树的工具。
+**也就是说ItemControl打破了，里面是DataTemplate来定义如何展现数据的
+而ControlTemplate就是普通的控件，打破了，往里面看，更微小的构造**
 
 * Margin控制的是控件与控件的距离，Padding控制的是内部文字与控件外边缘的距离。
 

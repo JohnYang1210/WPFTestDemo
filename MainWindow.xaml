@@ -9,10 +9,10 @@
     <Grid>
         <!--<local1:ResourcesDemo/>-->
         <!--<local1:textPlaceHolderDemo/>-->
-        <!--<local1:ControlDetailTemplateShow/>-->
+        <local1:ControlDetailTemplateShow/>
         <!--<local1:DIYControlTemplateDemo/>-->
         <!--<local1:RichTextBoxDemo/>-->
         <!--<local1:DataTemplateItemsSourceDataBindingTest/>-->
-        <local1:RichTextBoxDemo2/>
+        <!--<local1:RichTextBoxDemo2/>-->
     </Grid>
 </Window>
