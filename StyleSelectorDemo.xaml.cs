@@ -16,6 +16,7 @@ namespace wpfTestStudio
 {
     public class Person
     {
+        public string Hobby { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
 
@@ -67,10 +68,10 @@ namespace wpfTestStudio
             InitializeComponent();
             peopleListBox.ItemsSource = new List<Person>()
             {
-                new Person("JohnYang",31,true),
-                new Person("Tommy",28,false),
-                new Person("Kennsy",19,true),
-                new Person("Dorodial",24,false)
+                new Person("JohnYang",31,true){Hobby="Swimming"},
+                new Person("Tommy",28,false){Hobby="Running"},
+                new Person("Kennsy",19,true){Hobby="Cooking"},
+                new Person("Dorodial",24,false){Hobby="Learning"}
             };
             //需要注意的是，RadioButton的mode需是OneWay，否则会乱
 
@@ -113,6 +114,12 @@ namespace wpfTestStudio
             var selector=peopleListBox.ItemContainerStyleSelector;
             peopleListBox.ItemContainerStyleSelector = null;
             peopleListBox.ItemContainerStyleSelector = selector;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Button btn=(Button)sender;
+            MessageBox.Show((string)btn.Tag);
         }
     }
 

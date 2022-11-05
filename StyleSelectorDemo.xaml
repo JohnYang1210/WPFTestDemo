@@ -26,6 +26,7 @@
                     <RadioButton IsChecked="{Binding IfMale, Mode=OneWay}"  Content="男" />
                     <RadioButton IsChecked="{Binding IfFemale, Mode=OneWay}"   Content="女"/>
                     <Button Content="变性" Click="Button_Click"/>
+                    <Button Content="点击显示个人爱好" Tag="{Binding Hobby}" Click="Button_Click_1"/>
                 </StackPanel>
             </Grid>
         </DataTemplate>
