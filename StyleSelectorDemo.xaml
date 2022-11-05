@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="wpfTestStudio.StyleSelectorDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:wpfTestStudio"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="manStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Background" Value="blue"/>
+        </Style>
+        <Style x:Key="womanStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Background" Value="Pink"/>
+        </Style>
+        <DataTemplate x:Key="peopleItemTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{Binding Name}"/>
+                <TextBlock Grid.Row="1" Text="{Binding Age}"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <RadioButton IsChecked="{Binding IfMale, Mode=OneWay}"  Content="男" />
+                    <RadioButton IsChecked="{Binding IfFemale, Mode=OneWay}"   Content="女"/>
+                    <Button Content="变性" Click="Button_Click"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="peopleListBox" Grid.Column="0"
+                 SelectionChanged="peopleListBox_SelectionChanged"
+                 DisplayMemberPath="Name">
+            <ListBox.ItemContainerStyleSelector>
+                <local:GenderStyleSelectorDemo manStyle="{StaticResource manStyle}"
+                             womanStyle="{StaticResource womanStyle}"      
+                                               PropertyName="IfMale"
+                                               />
+            </ListBox.ItemContainerStyleSelector>
+        </ListBox>
+        <UserControl Grid.Column="1"
+            Content="{Binding SelectedItem, ElementName=peopleListBox}"
+                     ContentTemplate="{StaticResource peopleItemTemplate}"
+                     />
+    </Grid>
+    
+</UserControl>
