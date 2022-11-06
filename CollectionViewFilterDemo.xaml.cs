@@ -57,7 +57,7 @@ namespace wpfTestStudio
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //Button_Click(null,null);
+ 
             cv.Filter = (object obj) =>
             {
                 return (obj as PersonA).Age < 30;
@@ -66,7 +66,7 @@ namespace wpfTestStudio
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //Button_Click(null, null);
+ 
             cv.Filter = (object obj) =>
             {
                 return (obj as PersonA).Age >= 30;
