@@ -49,6 +49,8 @@ namespace wpfTestStudio
             };
             listPeople.ItemsSource = people;
             cv = (CollectionView)CollectionViewSource.GetDefaultView(people);
+            //ListCollectionView lcv=(ListCollectionView)cv;
+            
             //按Sex和FavoriteColor进行分组
             PropertyGroupDescription pgd = new PropertyGroupDescription("Sex");
             cv.GroupDescriptions.Add(pgd);

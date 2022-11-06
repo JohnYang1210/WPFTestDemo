@@ -16,6 +16,7 @@
         <!--<local1:RichTextBoxDemo2/>-->
         <!--<local1:StyleSelectorDemo/>-->
         <!--<local1:DataTemplateDataTriggerDemo/>-->
-        <local1:CollectionViewDemo/>
+        <!--<local1:CollectionViewDemo/>-->
+        <local1:ControlTemplateDemo/>
     </Grid>
 </Window>

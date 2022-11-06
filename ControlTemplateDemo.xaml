@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="wpfTestStudio.ControlTemplateDemo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:wpfTestStudio"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <!--使用ContentPresenter必须声明TargetType-->
+        <ControlTemplate x:Key="myBtnTemplate" TargetType="Button">
+            
+            <Border Padding="5" Background="White" 
+                    BorderBrush="Blue" CornerRadius="5" 
+                    BorderThickness="5" HorizontalAlignment="Center" 
+                    Name="templateBorder">
+                <!--ContentPresenter在Template中，仅仅起到占位符的作用-->
+                <!--TemplateBinding即绑定其所在的模板，从它取数据-->
+                <ContentPresenter Margin="{TemplateBinding Padding}"/>
+            </Border>
+            <!--Triggers必须放在后面，因为里面引用了`templateBorder`-->
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="templateBorder" 
+                            Property="Background" Value="LightGray"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="templateBorder" Property="Padding" Value="2"/>
+                    <Setter TargetName="templateBorder" Property="BorderThickness" Value="8"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <StackPanel>
+        <Button FontWeight="Bold" Template="{StaticResource myBtnTemplate}"
+                   Click="Button_Click" Name="myBtn" Content="Click Me"/>
+    </StackPanel>
+</UserControl>
