@@ -75,3 +75,11 @@ Button.Template的值就是ControlTemplate类型，是构建可视化树的工�
 (2)进行过滤---根据一些准则来逻辑化的排除一些数据成员[CollectionView的Filter属性，其中Filter是Func<bool,object>]
 (3)根据指定的属性的值来排列数据对象[CollectionView的SortDescriptions,其中添加的是SortDescription对象]
 (4)划分数据对象到不同的组
+
+* ControlTemplate
+WPF中，控件的外在模样和其功能是解耦的，外在模样可以通过ControlTemplate
+来重新定义，如果还想通过Content来传递显示文字信息，就需要在ControlTemplate
+中添加`<ContentPresenter/>`来定位，即`ContentPresenter`仅仅是一个占位符，
+但值得注意的还有两点：（1）若要使用ContentPresenter，就必须为ControlTemplate设定
+`TargetType`属性。（2）ControlPresenter若要使用其外在ControlTemplate的某些属性的值
+可以通过`TemplateBinding`。
