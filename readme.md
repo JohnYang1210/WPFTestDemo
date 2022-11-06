@@ -33,3 +33,37 @@ Button.Template的值就是ControlTemplate类型，是构建可视化树的工�
 
 * Margin控制的是控件与控件的距离，Padding控制的是内部文字与控件外边缘的距离。
 
+* 在DataTemplate中的控件可以通过`Tag`属性，将Binding传入，作为
+后续选中的哪一项的标识，如果是{Binding}，那么就是把Item整体传入。
+
+* 从项容器获取数据，动态改变模板<详：DataTemplateDataTriggerDemo.xaml>
+
+```xaml
+<DataTemplate x:Key="listBoxItemTemplate">
+            <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" 
+                    CornerRadius="4">
+                <StackPanel Margin="3">
+                    <TextBlock Text="{Binding Name}"/>
+                    <StackPanel>
+                        <StackPanel.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger 
+                                        Binding="{Binding Path=IsSelected, RelativeSource={
+                                        RelativeSource 
+                                        Mode=FindAncestor,
+                                        AncestorType={x:Type ListBoxItem}
+                                        }}" Value="false">
+                                        <Setter Property="StackPanel.Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <TextBlock Margin="3" Text="{Binding Description}"
+                                  TextWrapping="Wrap" MaxWidth="250" HorizontalAlignment="Left"/>
+                        <Image Source="{Binding ImagePath}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+```
