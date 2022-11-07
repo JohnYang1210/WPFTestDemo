@@ -24,10 +24,10 @@ namespace wpfTestStudio
         public ControlDetailTemplateShow()
         {
             InitializeComponent();
-            Initialized();
+            Initiald();
 
         }
-        private void Initialized()
+        private void Initiald()
         {
             Type controlType = typeof(Control);
             List<Type> derivedTypes = new List<Type>();

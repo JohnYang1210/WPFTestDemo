@@ -83,3 +83,8 @@ WPF中，控件的外在模样和其功能是解耦的，外在模样可以通�
 但值得注意的还有两点：（1）若要使用ContentPresenter，就必须为ControlTemplate设定
 `TargetType`属性。（2）ControlPresenter若要使用其外在ControlTemplate的某些属性的值
 可以通过`TemplateBinding`。
+
+* 如果编译器看到一个程序的startupUri是一个Page，它就创建一个`NavigationWindow`来控制它，
+* 这就是为什么在PageDemo中看，没有去指定导航宿主。
+
+

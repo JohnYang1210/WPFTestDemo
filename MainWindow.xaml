@@ -17,6 +17,7 @@
         <!--<local1:StyleSelectorDemo/>-->
         <!--<local1:DataTemplateDataTriggerDemo/>-->
         <!--<local1:CollectionViewDemo/>-->
-        <local1:ControlTemplateDemo/>
+        <!--<local1:ControlTemplateDemo/>-->
+        <local1:PageDemo/>
     </Grid>
 </Window>
