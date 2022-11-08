@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="PageDemo\**" />
+    <EmbeddedResource Remove="PageDemo\**" />
+    <None Remove="PageDemo\**" />
+    <Page Remove="PageDemo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\Danger.png" />
     <None Remove="Resources\Eye.png" />
     <None Remove="Resources\PeopleHollo.png" />

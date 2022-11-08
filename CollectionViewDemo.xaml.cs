@@ -65,6 +65,7 @@ namespace wpfTestStudio
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             cv.Filter = null;
+            
         }
         /// <summary>
         /// 过滤小于30岁的
