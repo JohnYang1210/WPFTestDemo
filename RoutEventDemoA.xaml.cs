@@ -53,5 +53,29 @@ namespace wpfTestStudio
             Point pt=e.GetPosition(this);
             coordTextBlk.Text = $"You are at ({pt.X},{pt.Y}) in window Coordination";
         }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 1)
+            {
+                MessageBox.Show("左键单击");
+            }
+            if (e.ClickCount == 2)
+            {
+                MessageBox.Show("左键双击");
+            }
+        }
+
+        private void Grid_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 1)
+            {
+                MessageBox.Show("右键单击");
+            }
+            if (e.ClickCount == 2)
+            {
+                MessageBox.Show("右键双击");
+            }
+        }
     }
 }

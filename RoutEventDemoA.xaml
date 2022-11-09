@@ -12,6 +12,8 @@
           PreviewMouseUp="SomethingClicked"
           KeyDown="Grid_KeyDown"
           MouseMove="Grid_MouseMove"
+          MouseLeftButtonDown="Grid_MouseLeftButtonDown"
+          MouseRightButtonDown="Grid_MouseRightButtonDown"
           >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
