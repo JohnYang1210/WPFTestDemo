@@ -5,8 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wpfTestStudio"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" MouseUp="SomethingClicked">
-    <Grid Margin="3" MouseUp="SomethingClicked">
+             d:DesignHeight="450" d:DesignWidth="800" MouseUp="SomethingClicked"
+             PreviewMouseUp="SomethingClicked"
+             >
+    <Grid Margin="3" MouseUp="SomethingClicked" PreviewMouseUp="SomethingClicked">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -15,14 +17,14 @@
         </Grid.RowDefinitions>
         <Label Margin="5" Grid.Row="0" HorizontalAlignment="Left"
                Background="AliceBlue" BorderBrush="Black" BorderThickness="1" 
-               MouseUp="SomethingClicked"/>
+               MouseUp="SomethingClicked" PreviewMouseUp="SomethingClicked"/>
         <StackPanel MouseUp="SomethingClicked">
-            <TextBlock Margin="3" MouseUp="SomethingClicked">
+            <TextBlock Margin="3" MouseUp="SomethingClicked" PreviewMouseUp="SomethingClicked">
                 Image and Text Label
             </TextBlock>
             <Image Source="Resources/PeopleHollo.png" Stretch="None" 
-                   MouseUp="SomethingClicked"/>
-            <TextBlock Margin="3" MouseUp="SomethingClicked">
+                   MouseUp="SomethingClicked" PreviewMouseUp="SomethingClicked"/>
+            <TextBlock Margin="3" MouseUp="SomethingClicked" PreviewMouseUp="SomethingClicked">
                 Courtesy of the StackPanel
             </TextBlock>
         </StackPanel>
