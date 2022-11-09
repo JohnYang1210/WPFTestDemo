@@ -47,5 +47,11 @@ namespace wpfTestStudio
                 MessageBox.Show("按了LeftShift键");
             }
         }
+
+        private void Grid_MouseMove(object sender, MouseEventArgs e)
+        {
+            Point pt=e.GetPosition(this);
+            coordTextBlk.Text = $"You are at ({pt.X},{pt.Y}) in window Coordination";
+        }
     }
 }
