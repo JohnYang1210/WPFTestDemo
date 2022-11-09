@@ -19,6 +19,7 @@
         <!--<local1:CollectionViewDemo/>-->
         <!--<local1:ControlTemplateDemo/>-->
         <!--<local1:PageDemo/>-->
-        <local1:CommandDemo/>
+        <!--<local1:CommandDemo/>-->
+        <local1:RoutEventDemoA/>
     </Grid>
 </Window>
