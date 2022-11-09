@@ -19,6 +19,7 @@ namespace PageDemo
     /// </summary>
     public partial class Page3 : Page
     {
+        public static readonly RoutedEvent click;
         public Page3()
         {
             InitializeComponent();

@@ -35,6 +35,8 @@ namespace wpfTestStudio
     /// </summary>
     public partial class CollectionViewDemo : UserControl
     {
+
+
         CollectionView cv;
         public CollectionViewDemo()
         {
