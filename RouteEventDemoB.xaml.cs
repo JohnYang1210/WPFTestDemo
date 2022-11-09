@@ -14,7 +14,8 @@ using System.Windows.Shapes;
 namespace wpfTestStudio
 {
     /// <summary>
-    /// RouteEventDemoB.xaml 的交互逻辑
+    /// RouteEventDemoB.xaml 的交互逻辑,
+    /// 将TextBlock拖到Label上
     /// </summary>
     public partial class RouteEventDemoB : UserControl
     {
