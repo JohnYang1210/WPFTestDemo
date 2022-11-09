@@ -39,5 +39,13 @@ namespace wpfTestStudio
         {
             lstMessages.Items.Clear();
         }
+
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.LeftShift))
+            {
+                MessageBox.Show("按了LeftShift键");
+            }
+        }
     }
 }
