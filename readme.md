@@ -108,5 +108,6 @@ WPF中，控件的外在模样和其功能是解耦的，外在模样可以通�
 的Print命令，只要应用程序使用相同预先构建的命令，在应用程序中关联打印时，就不需要做任何额外工作了。
 
 `命令架构图`:
+
 <img src="Resources\WPFCommandArchitecture.jpg">
 
