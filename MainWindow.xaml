@@ -22,6 +22,7 @@
         <!--<local1:CommandDemo/>-->
         <!--<local1:RoutEventDemoA/>-->
         <!--<local1:RouteEventDemoB/>-->
-        <local1:CommandDemoA/>
+        <!--<local1:CommandDemoA/>-->
+        <local1:SelfDefineCommand/>
     </Grid>
 </Window>
