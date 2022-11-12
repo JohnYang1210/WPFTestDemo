@@ -6,10 +6,20 @@
              xmlns:local="clr-namespace:wpfTestStudio"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
     <UserControl.CommandBindings>
-        <CommandBinding Command="local:DataCommands.Requery" Executed="CommandBinding_Executed"/>
+        <CommandBinding Command="local:DataCommands.Requery" 
+                        CanExecute="CommandBinding_CanExecute"
+                        Executed="CommandBinding_Executed"/>
     </UserControl.CommandBindings>
-    <Grid>
+    <StackPanel Orientation="Horizontal">
         <Button Command="local:DataCommands.Requery">Requery</Button>
-    </Grid>
+        <TextBox x:Name="textbox" TextChanged="textbox_TextChanged">
+            <TextBox.CommandBindings>
+                <CommandBinding Command="local:DataCommands.Requery" 
+                        
+                        Executed="CommandBinding_Executed"/>
+            </TextBox.CommandBindings>
+        </TextBox>
+    </StackPanel>
 </UserControl>

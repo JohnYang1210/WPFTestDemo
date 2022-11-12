@@ -42,12 +42,14 @@ namespace wpfTestStudio
             {
                 e.CanExecute = false;
             }
+            
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             isDirty[sender] = true;
-            CommandManager.InvalidateRequerySuggested();
+
+
             //((TextBox)sender).CommandBindings[0].Command.Execute(null);
         }
     }

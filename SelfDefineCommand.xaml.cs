@@ -52,5 +52,28 @@ namespace wpfTestStudio
         {
             MessageBox.Show("Requery 事件");
         }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            if (textbox.Text != "")
+            {
+                e.CanExecute = true;
+            }
+            else
+            {
+                e.CanExecute = false;
+            }
+        }
+
+        private void textbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                CommandManager.InvalidateRequerySuggested();
+            }));
+            
+        }
+
+        
     }
 }
