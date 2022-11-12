@@ -113,3 +113,15 @@ WPF中，控件的外在模样和其功能是解耦的，外在模样可以通�
 
 触发命令库中的命令的最简单的方法是将它们关联到已实现了ICommandSource接口的控件，其中包括继承自`ButtonBase`类的控件
 (Button,CheckBox（均为单击发送命令）),单独的ListBoxItem(双击时发送命令)，HyperLink（单击发送命令），以及MenuItem（单击发送命令）。
+
+CommandBinding的CanExecute，Executed中的sender是CommandBinding被添加到的CommandBindings所在的控件。
+如：
+```xaml
+
+<TextBox.CommandBindings>
+    <CommandBinding Command=...
+    />
+</TextBox.CommandBindings>
+
+```
+那么上述的CommandBinding的Executed，CanExecute中的sender就是该TextBox

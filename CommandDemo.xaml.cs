@@ -54,12 +54,14 @@ namespace wpfTestStudio
 
         private void cb_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+            MessageBox.Show($"Sender is {sender}");
             this.textBoxA.Clear();
             e.Handled = true;
         }
 
         private void cb_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
+            MessageBox.Show($"Sender is {sender}");
             if (string.IsNullOrEmpty(this.textBoxA.Text))
             {
                 e.CanExecute = false;
