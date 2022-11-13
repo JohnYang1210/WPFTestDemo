@@ -6,6 +6,10 @@
              xmlns:local="clr-namespace:wpfTestStudio"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Unloaded="UserControl_Unloaded">
+    <UserControl.CommandBindings>
+        <CommandBinding Command="local:CommandDemoC.ApplicationUndo" 
+                        Executed="CommandBinding_Executed" CanExecute="CommandBinding_CanExecute"/>
+    </UserControl.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -14,18 +18,32 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button x:Name="cutBtn" Content="Cut" Margin="5"/>
-            <Button x:Name="copyBtn" Content="Copy" Margin="5"/>
-            <Button x:Name="pasteBtn" Content="Paste" Margin="5"/>
-            <Button x:Name="undoBtn" Content="Undo" Margin="5"/>
-            <Button x:Name="revBtn" Content="Reverse Last Command" Margin="5"/>
+            <Button x:Name="cutBtn" Content="Cut" Margin="5" Command="ApplicationCommands.Cut"
+                    
+                    />
+            <Button x:Name="copyBtn" Content="Copy" Margin="5" Command="ApplicationCommands.Copy"
+         
+                    />
+            <Button x:Name="pasteBtn" Content="Paste" Margin="5" Command="ApplicationCommands.Paste"
+                 
+                    />
+            <Button x:Name="undoBtn" Content="Undo" Margin="5" Command="ApplicationCommands.Undo"
+         
+                    />
+            <Button x:Name="revBtn" Content="Reverse Last Command" Margin="5" 
+                    Command="local:CommandDemoC.ApplicationUndo"
+                    />
         </StackPanel>
         <TextBox Grid.Row="1" BorderBrush="Black" BorderThickness="1"
-                 x:Name="textBoxUp" Margin="5"/>
+                 x:Name="textBoxUp" Margin="5" 
+                 TextWrapping="Wrap" AcceptsReturn="True"
+                 />
         <TextBox Grid.Row="2" BorderBrush="Black" BorderThickness="1"
-                 x:Name="textBoxDown" Margin="5"/>
+                 x:Name="textBoxDown" Margin="5" 
+                 TextWrapping="Wrap" AcceptsReturn="True"
+                 />
         <ScrollViewer Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="5">
-            <ListBox x:Name="lstHistory"/>
+            <ListBox x:Name="lstHistory" Margin="5" DisplayMemberPath="CommandName"/>
         </ScrollViewer>
     </Grid>
 </UserControl>

@@ -63,7 +63,10 @@ namespace wpfTestStudio
         //静态构造器
         static CommandDemoC()
         {
-            applicationUndo=new RoutedUICommand("ApplicationUndo","Application Undo",typeof(CommandDemoC));
+            InputGestureCollection inputs = new InputGestureCollection();
+            inputs.Add(new KeyGesture(Key.Z,ModifierKeys.Control,"Ctrl+Z"));
+            applicationUndo=new RoutedUICommand("ApplicationUndo","Application Undo",
+                typeof(CommandDemoC),inputs);
         }
 
         public CommandDemoC()
@@ -81,13 +84,28 @@ namespace wpfTestStudio
             TextBox txt = e.Source as TextBox;
             if(txt != null)
             {
+                RoutedCommand cmd = (RoutedCommand)e.Command;
+                CommandHistoryItem histItem = new CommandHistoryItem(cmd.Name,txt,"Text",txt.Text);
 
+                ListBoxItem item = new ListBoxItem();
+                item.Content = histItem;
+                lstHistory.Items.Add(item); 
             }
         }
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
         {
             this.RemoveHandler(CommandManager.PreviewExecutedEvent,new ExecutedRoutedEventHandler(CommandExecuted));
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+
+        }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+
         }
     }
 }
