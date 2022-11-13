@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Reflection;
 using System.Text;
 using System.Windows;
@@ -52,6 +53,7 @@ namespace wpfTestStudio
     /// </summary>
     public partial class CommandDemoC : UserControl
     {
+        private ObservableCollection<CommandHistoryItem> histItems = new ObservableCollection<CommandHistoryItem>();
         private static RoutedUICommand applicationUndo;
         public static RoutedUICommand ApplicationUndo
         {
@@ -72,7 +74,10 @@ namespace wpfTestStudio
         public CommandDemoC()
         {
             InitializeComponent();
+            lstHistory.ItemsSource = histItems;
+            //this.AddHandler(ListBox.MouseWheelEvent, new MouseWheelEventHandler(lstHistory_MouseWheel));
             this.AddHandler(CommandManager.PreviewExecutedEvent,new ExecutedRoutedEventHandler(CommandExecuted));
+            initBindMouseWheel();
         }
 
         
@@ -86,10 +91,7 @@ namespace wpfTestStudio
             {
                 RoutedCommand cmd = (RoutedCommand)e.Command;
                 CommandHistoryItem histItem = new CommandHistoryItem(cmd.Name,txt,"Text",txt.Text);
-
-                ListBoxItem item = new ListBoxItem();
-                item.Content = histItem;
-                lstHistory.Items.Add(item); 
+                histItems.Add(histItem);
             }
         }
 
@@ -116,5 +118,17 @@ namespace wpfTestStudio
                 e.CanExecute = true;
             }
         }
+
+        private void initBindMouseWheel()
+        {
+            PreviewMouseWheel += (sender, e) =>
+            {
+                var eventArg = new MouseWheelEventArgs(e.MouseDevice, 1, e.Delta);
+                eventArg.RoutedEvent = UIElement.MouseWheelEvent;
+                eventArg.Source = sender;
+                this.lstHistory.RaiseEvent(eventArg);
+            };
+        }
+
     }
 }

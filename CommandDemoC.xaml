@@ -43,8 +43,10 @@
                  x:Name="textBoxDown" Margin="5" 
                  TextWrapping="Wrap" AcceptsReturn="True"
                  />
-        <ScrollViewer Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="5">
-            <ListBox x:Name="lstHistory" Margin="5" DisplayMemberPath="CommandName"/>
-        </ScrollViewer>
+        <!--<ScrollViewer Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="5" x:Name="scrollViewer">
+            
+        </ScrollViewer>-->
+        <ListBox Grid.Row="3" Name="lstHistory" Margin="5" DisplayMemberPath="CommandName" >
+        </ListBox>
     </Grid>
 </UserControl>
