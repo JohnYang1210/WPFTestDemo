@@ -43,7 +43,7 @@
                  x:Name="textBoxDown" Margin="5" 
                  TextWrapping="Wrap" AcceptsReturn="True"
                  />
-        <ScrollViewer Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="5" x:Name="scrollViewer" MouseWheel="scrollViewer_MouseWheel">
+        <ScrollViewer Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="5" x:Name="scrollViewer">
             <ListBox Grid.Row="3" Name="lstHistory" Margin="5" DisplayMemberPath="CommandName" >
             </ListBox>
         </ScrollViewer>

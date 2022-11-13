@@ -131,17 +131,26 @@ namespace wpfTestStudio
 
         private void initBindMouseWheel()
         {
-            PreviewMouseWheel += (sender, e) =>
+            //PreviewMouseWheel += (sender, e) =>
+            //{
+            //    var eventArg = new MouseWheelEventArgs(e.MouseDevice, 1, e.Delta);
+            //    eventArg.RoutedEvent = UIElement.MouseWheelEvent;
+            //    eventArg.Source = sender;
+            //    this.lstHistory.RaiseEvent(eventArg);
+            //};
+            //MouseDoubleClick += (sender, e) =>
+            //{
+            //    MessageBox.Show($"sender is {e.OriginalSource}");
+            //};
+            //或者换个形式，如下：
+            this.AddHandler(PreviewMouseWheelEvent, new MouseWheelEventHandler((sender,e) =>
             {
                 var eventArg = new MouseWheelEventArgs(e.MouseDevice, 1, e.Delta);
                 eventArg.RoutedEvent = UIElement.MouseWheelEvent;
                 eventArg.Source = sender;
                 this.lstHistory.RaiseEvent(eventArg);
-            };
-            MouseDoubleClick += (sender, e) =>
-            {
-                MessageBox.Show($"sender is {e.OriginalSource}");
-            };
+            }));
+
         }
     }
 }
