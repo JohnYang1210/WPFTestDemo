@@ -157,6 +157,9 @@ private void initBindMouseWheel()
 MainWindow.cs:
 窗体构造函数中：
 this.lstHistory.AddHandler(PreviewMouseWheelEvent, new MouseWheelEventHandler(lstHistory_MouseWheel));
+或：
+this.AddHandler(PreviewMouseWheelEvent, new MouseWheelEventHandler(lstHistory_MouseWheel));
+
 
 private void lstHistory_MouseWheel(object sender, MouseWheelEventArgs e)
         {
