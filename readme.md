@@ -124,4 +124,21 @@ CommandBinding的CanExecute，Executed中的sender是CommandBinding被添加到�
 </TextBox.CommandBindings>
 
 ```
-那么上述的CommandBinding的Executed，CanExecute中的sender就是该TextBox
+那么上述的CommandBinding的Executed，CanExecute中的sender就是该TextBox。
+
+* ListBox由于条目比较多，自动出现了scrollViewer时候，滚动中键，
+* 实现ListBox滚动的方法，详`CommandDemoC.xaml`：
+ ````c#
+
+private void initBindMouseWheel()
+        {
+            PreviewMouseWheel += (sender, e) =>
+            {
+                var eventArg = new MouseWheelEventArgs(e.MouseDevice, 1, e.Delta);
+                eventArg.RoutedEvent = UIElement.MouseWheelEvent;
+                eventArg.Source = sender;
+                this.lstHistory.RaiseEvent(eventArg);
+            };
+        }
+
+```
