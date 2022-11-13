@@ -75,12 +75,22 @@ namespace wpfTestStudio
         {
             InitializeComponent();
             lstHistory.ItemsSource = histItems;
-            //this.AddHandler(ListBox.MouseWheelEvent, new MouseWheelEventHandler(lstHistory_MouseWheel));
+            //this.lstHistory.AddHandler(PreviewMouseWheelEvent, new MouseWheelEventHandler(lstHistory_MouseWheel));
             this.AddHandler(CommandManager.PreviewExecutedEvent,new ExecutedRoutedEventHandler(CommandExecuted));
             initBindMouseWheel();
         }
 
-        
+        //private void lstHistory_MouseWheel(object sender, MouseWheelEventArgs e)
+        //{
+        //    if (e.Delta > 0)
+        //    {
+        //        scrollViewer.LineUp();
+        //    }
+        //    else
+        //    {
+        //        scrollViewer.LineDown();
+        //    }
+        //}
 
         private void CommandExecuted(object sender, ExecutedRoutedEventArgs e)
         {
@@ -128,7 +138,10 @@ namespace wpfTestStudio
                 eventArg.Source = sender;
                 this.lstHistory.RaiseEvent(eventArg);
             };
+            MouseDoubleClick += (sender, e) =>
+            {
+                MessageBox.Show($"sender is {e.OriginalSource}");
+            };
         }
-
     }
 }

@@ -128,6 +128,7 @@ CommandBinding的CanExecute，Executed中的sender是CommandBinding被添加到�
 
 * ListBox由于条目比较多，自动出现了scrollViewer时候，滚动中键，
 * 实现ListBox滚动的方法，详`CommandDemoC.xaml`：
+`方法一`:
  ````c#
 
 private void initBindMouseWheel()
@@ -142,3 +143,32 @@ private void initBindMouseWheel()
         }
 
 ```
+`方法二`:
+外层包裹一个ScrollViewer
+```xaml
+<ScrollViewer Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="5" x:Name="scrollViewer" MouseWheel="scrollViewer_MouseWheel">
+            <ListBox Grid.Row="3" Name="lstHistory" Margin="5" DisplayMemberPath="CommandName" >
+            </ListBox>
+        </ScrollViewer>
+
+```
+
+```c#
+MainWindow.cs:
+窗体构造函数中：
+this.lstHistory.AddHandler(PreviewMouseWheelEvent, new MouseWheelEventHandler(lstHistory_MouseWheel));
+
+private void lstHistory_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                scrollViewer.LineUp();
+            }
+            else
+            {
+                scrollViewer.LineDown();
+            }
+        }
+
+```
+
