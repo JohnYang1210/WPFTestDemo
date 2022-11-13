@@ -81,7 +81,7 @@ namespace wpfTestStudio
         {
             if (e.Source is ICommandSource) return;
             if (e.Command == CommandDemoC.applicationUndo) return;
-            TextBox txt = e.Source as TextBox;
+            TextBox txt = e.OriginalSource as TextBox;
             if(txt != null)
             {
                 RoutedCommand cmd = (RoutedCommand)e.Command;
@@ -100,12 +100,21 @@ namespace wpfTestStudio
 
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-
+            CommandHistoryItem histItem = (CommandHistoryItem)lstHistory.Items[lstHistory.Items.Count - 1];
+            if (histItem.CanUndo) histItem.Undo();
+            lstHistory.Items.Remove(histItem);
         }
 
         private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-
+            if (lstHistory == null || lstHistory.Items.Count == 0)
+            {
+                e.CanExecute = false;
+            }
+            else
+            {
+                e.CanExecute = true;
+            }
         }
     }
 }

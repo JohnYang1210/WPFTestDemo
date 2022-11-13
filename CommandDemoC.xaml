@@ -19,19 +19,20 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Button x:Name="cutBtn" Content="Cut" Margin="5" Command="ApplicationCommands.Cut"
-                    
+                    CommandTarget="{Binding ElementName=textBoxUp}"
                     />
             <Button x:Name="copyBtn" Content="Copy" Margin="5" Command="ApplicationCommands.Copy"
-         
+         CommandTarget="{Binding ElementName=textBoxUp}"
                     />
             <Button x:Name="pasteBtn" Content="Paste" Margin="5" Command="ApplicationCommands.Paste"
-                 
+                 CommandTarget="{Binding ElementName=textBoxUp}"
                     />
             <Button x:Name="undoBtn" Content="Undo" Margin="5" Command="ApplicationCommands.Undo"
-         
+                    CommandTarget="{Binding ElementName=textBoxUp}"
                     />
             <Button x:Name="revBtn" Content="Reverse Last Command" Margin="5" 
                     Command="local:CommandDemoC.ApplicationUndo"
+                    CommandTarget="{Binding ElementName=textBoxUp}"
                     />
         </StackPanel>
         <TextBox Grid.Row="1" BorderBrush="Black" BorderThickness="1"
