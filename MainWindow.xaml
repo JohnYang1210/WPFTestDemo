@@ -26,6 +26,7 @@
         <!--<local1:SelfDefineCommand/>-->
         <!--<local1:CommandDemoB/>-->
         <!--<local1:CommandDemoC/>-->
-        <local1:ExpanderDemo/>
+        <!--<local1:ExpanderDemo/>-->
+        <local1:DynaChangeSize/>
     </Grid>
 </Window>

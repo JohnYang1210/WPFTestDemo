@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="wpfTestStudio.DynaChangeSize"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:wpfTestStudio"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="250">
+    <StackPanel Orientation="Horizontal">
+        <Grid Width="100">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock TextWrapping="Wrap" Grid.Row="0">
+                被称为”央视最美女记者“的王冰冰在近两年可谓是火得一塌糊涂。
+                在央视工作的她不仅业务能力出彩，饱满幼态又清纯的小圆脸更是让她成为了无数人
+                追捧和喜欢的大众女神。除此之外，无论是日常出席采访工作，还是个人社交平台上，
+                王冰冰为大家留下的永远是敢于尝试各种运动、热爱生活的美好印象。
+            </TextBlock>
+            <Button Grid.Row="1" Content="TEST"/>
+        </Grid>
+        <Button x:Name="changeBtn" Width="50"
+                Content="展开" Height="50" Click="changeBtn_Click"
+                VerticalAlignment="Top"/>
+        <Grid Width="100" x:Name="grid2" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock TextWrapping="Wrap" Grid.Row="0">
+                被称为”央视最美女记者“的王冰冰在近两年可谓是火得一塌糊涂。
+                在央视工作的她不仅业务能力出彩，饱满幼态又清纯的小圆脸更是让她成为了无数人
+                追捧和喜欢的大众女神。除此之外，无论是日常出席采访工作，还是个人社交平台上，
+                王冰冰为大家留下的永远是敢于尝试各种运动、热爱生活的美好印象。
+            </TextBlock>
+            <Button Grid.Row="1" Content="TEST"/>
+        </Grid>
+    </StackPanel>
+</UserControl>
