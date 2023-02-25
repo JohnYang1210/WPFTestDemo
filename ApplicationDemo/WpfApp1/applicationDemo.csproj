@@ -51,11 +51,11 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="Xceed.Wpf.AvalonDock, Version=4.4.22258.9000, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\XCeed源码\Src\Xceed.Wpf.AvalonDock.Blueprint\bin\Debug\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <HintPath>D:\XCeedSourceCode\Src\Xceed.Wpf.AvalonDock.Blueprint\bin\Debug\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
     <Reference Include="Xceed.Wpf.Toolkit, Version=4.4.22258.9000, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\XCeed源码\Src\Xceed.Wpf.AvalonDock.Blueprint\bin\Debug\Xceed.Wpf.Toolkit.dll</HintPath>
+      <HintPath>D:\XCeedSourceCode\Src\Xceed.Wpf.AvalonDock.Blueprint\bin\Debug\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
